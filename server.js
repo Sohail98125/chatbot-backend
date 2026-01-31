@@ -5,10 +5,14 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 const app = express()
-const port = 3000
+const port = process.env.PORT
+
 app.use(cors())
 
 app.get('/search',chatbot)
+app.get('/',(req,res)=>{
+  res.send("Backend API is running 🚀")
+})
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(` App listening on port${port}`)
 })
