@@ -4,7 +4,7 @@ const chatbot = async (req, res) => {
   try {
     const { query } = req.query
   const response = await axios.get(
-      `https://text.pollinations.ai/${encodeURIComponent(query)}`
+      `https://text.pollinations.ai/${encodeURIComponent(query)}`, { timeout: 15000 } 
     );
 
 
